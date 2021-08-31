@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const user = require('./Schema/user');
 const app = express();
-const port = 3000;
+
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -115,7 +115,7 @@ console.log(req.body.score);
         console.log(doc);
     })
 });
-app.listen(port, ()=>
+app.listen(process.env.PORT, ()=>
 {
 
     mongoose.connect("mongodb+srv://aryanben:PasswordMongoDB@cluster5.ychod.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",()=>{
